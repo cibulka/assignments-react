@@ -37,7 +37,7 @@ Using the provided UI components, implement the following modifications, bugfixe
 
 #### Bugs
 
--   [x] **B1**: `List` content
+-   [-] **B1**: `List` content
     -   Fix the content alignment of the non-empty `List` component.
 -   [x] **B2**: `Footer` alignment
     -   Fix the `Layout` component so the `Footer` is always attached to the bottom of the `Layout`.
@@ -59,7 +59,7 @@ _Fix all other bugs and visual imperfections you find._
     -   Implement logic, which toggles visibility between the "edit" button in the `ListItem` and a `Form` component.
     -   Entering a value inside the `Form` component and submitting it should edit the existing todo item.
     -   Changes to the data should be persisted on the server via an API call.
--   [ ] **F5**: Complete a todo item
+-   [-] **F5**: Complete a todo item
     -   After clicking on the checkbox in the `ListItem`, the todo item should toggle between "done" and "todo" states.
     -   Changes to the data should be persisted on the server via an API call.
 -   [x] **F6**: Delete a todo item
@@ -78,7 +78,7 @@ _Fix all other bugs and visual imperfections you find._
 
 -   [x] **UI1**: `Header` "add" button alignment
     -   The "add" button should be aligned to the right in the `Header` component.
--   [ ] **UI2**: `ListItem` actions alignment
+-   [x] **UI2**: `ListItem` actions alignment
     -   Action buttons in the `ListItem` component should be aligned to the right.
 -   [x] **UI3**: `ListItem` actions visibility
     -   Action buttons in the `ListItem` component should be visible only when hovering over the `ListItem`.
@@ -91,7 +91,7 @@ _Fix all other bugs and visual imperfections you find._
 
 ### Server
 
--   [ ] **S1**: Implement a custom endpoint for marking single todo item as "done". Calling this endpoint sets the `done` field to `true` and the `finishedAt` field to current time. Use this new endpoint in the client.
+-   [-] **S1**: Implement a custom endpoint for marking single todo item as "done". Calling this endpoint sets the `done` field to `true` and the `finishedAt` field to current time. Use this new endpoint in the client.
 
 ## Additional Comments
 
