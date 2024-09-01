@@ -35,7 +35,7 @@ export const Form = (props: FormProps) => {
             </button>
             <button type={"reset"}>
                 <Cross1Icon />
-            </button>
+            </button>    
         </FormStyled>
     );
 };

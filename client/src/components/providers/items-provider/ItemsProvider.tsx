@@ -8,21 +8,23 @@ import { ItemsActionType } from "./action-types";
 
 
 const initialState: ItemsContextValue = {
-    items: []
+    edited: null,
+    labelAdding: null,
+    items: [],
   };
 
 export const ItemsContext = createContext<{
     state: ItemsContextValue;
     dispatch: ItemsDispatch | null;
-  }>({ state: initialState, dispatch: null });
+  } | null>(null);
 
 export const ItemsProvider = ({ children }: PropsWithChildren) => {
     const [state, dispatch] = useReducer(itemsReducer, initialState);
 
     useEffect(() => {
-      fetch(API.items).then(res => res.json()).then(todos => {
-        dispatch({ type: ItemsActionType.LOAD_TODOS, payload: todos });
-      });
+        fetch(API.items).then(res => res.json()).then((todos) => {
+            dispatch({ type: ItemsActionType.LOAD_TODOS, payload: todos })
+        });
     }, [dispatch]);
 
     return (

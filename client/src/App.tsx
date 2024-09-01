@@ -5,22 +5,27 @@ import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
 import { ThemeProvider } from "./components/providers/ThemeProvider";
 import { ItemsProvider } from "./components/providers/items-provider";
-import { useOnItemAdd } from "./hooks/server";
+import { useItemsContext, useOnItemAddOrEdit } from "./components/providers/items-provider/hooks";
 
-export const App = () => {
-    const onItemAdd = useOnItemAdd();
+const AppProvided = () => {
+    const { state: { edited } } = useItemsContext();
+    const onItemAddOrEdit = useOnItemAddOrEdit(edited?.id || null);
 
     return (
-        <ThemeProvider>
-            <ItemsProvider>
-                <Container>
-                    <Layout>
-                        <Header onItemAdd={onItemAdd}>To Do app</Header>
-                        <List />
-                        <Footer />
-                    </Layout>
-                </Container>
-            </ItemsProvider>
-        </ThemeProvider>
+        <Container>
+            <Layout>
+                <Header onItemAdd={onItemAddOrEdit}>To Do app</Header>
+                <List />
+                <Footer />
+            </Layout>
+        </Container>
     );
 }
+
+export const App = () => (
+    <ThemeProvider>
+        <ItemsProvider>
+            <AppProvided />
+        </ItemsProvider>
+    </ThemeProvider>
+);
