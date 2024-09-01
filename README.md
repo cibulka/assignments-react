@@ -59,7 +59,7 @@ _Fix all other bugs and visual imperfections you find._
     -   Implement logic, which toggles visibility between the "edit" button in the `ListItem` and a `Form` component.
     -   Entering a value inside the `Form` component and submitting it should edit the existing todo item.
     -   Changes to the data should be persisted on the server via an API call.
--   ❗ **F5**: Complete a todo item
+-   [x] **F5**: Complete a todo item
     -   After clicking on the checkbox in the `ListItem`, the todo item should toggle between "done" and "todo" states.
     -   Changes to the data should be persisted on the server via an API call.
 -   [x] **F6**: Delete a todo item
@@ -91,7 +91,7 @@ _Fix all other bugs and visual imperfections you find._
 
 ### Server
 
--   [ ] **S1**: Implement a custom endpoint for marking single todo item as "done". Calling this endpoint sets the `done` field to `true` and the `finishedAt` field to current time. Use this new endpoint in the client.
+-   ❗ **S1**: Implement a custom endpoint for marking single todo item as "done". Calling this endpoint sets the `done` field to `true` and the `finishedAt` field to current time. Use this new endpoint in the client.
 
 ## Additional Comments
 
