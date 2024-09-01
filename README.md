@@ -37,7 +37,7 @@ Using the provided UI components, implement the following modifications, bugfixe
 
 #### Bugs
 
--   [ ] **B1**: `List` content
+-   ❓ **B1**: `List` content
     -   Fix the content alignment of the non-empty `List` component.
 -   [x] **B2**: `Footer` alignment
     -   Fix the `Layout` component so the `Footer` is always attached to the bottom of the `Layout`.
@@ -59,7 +59,7 @@ _Fix all other bugs and visual imperfections you find._
     -   Implement logic, which toggles visibility between the "edit" button in the `ListItem` and a `Form` component.
     -   Entering a value inside the `Form` component and submitting it should edit the existing todo item.
     -   Changes to the data should be persisted on the server via an API call.
--   [ ] **F5**: Complete a todo item
+-   ❗ **F5**: Complete a todo item
     -   After clicking on the checkbox in the `ListItem`, the todo item should toggle between "done" and "todo" states.
     -   Changes to the data should be persisted on the server via an API call.
 -   [x] **F6**: Delete a todo item
@@ -85,9 +85,9 @@ _Fix all other bugs and visual imperfections you find._
 
 #### Stories (optional tasks)
 
--   [ ] **SB1**: Add a story/stories for the `Layout` component.
+-   [x] **SB1**: Add a story/stories for the `Layout` component.
 -   [x] **SB2**: Add stories showing available `Button` variants.
--   [ ] **SB3**: Add a story showcasing the `ListItem` actions visibility change on hover (implemented in _"UI3"_).
+-   [x] **SB3**: Add a story showcasing the `ListItem` actions visibility change on hover (implemented in _"UI3"_).
 
 ### Server
 
