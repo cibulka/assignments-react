@@ -4,6 +4,7 @@ import styled from "styled-components";
 
 const StyledDiv = styled.header`
     display: flex;
+    justify-content: space-between;
 
     button {
         all: unset;
