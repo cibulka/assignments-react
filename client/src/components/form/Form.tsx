@@ -1,11 +1,16 @@
 import { CheckIcon, Cross1Icon } from "@radix-ui/react-icons";
-import React, { useState } from "react";
+import { useState } from "react";
 import styled from "styled-components";
 
 import { Input } from "./Input";
+import { ButtonIcon } from "../button/styles";
 
 const FormStyled = styled.form`
     display: flex;
+    gap: 0.5em;
+    input {
+        margin-right: 1em;
+    }
 `;
 
 type FormProps = {
@@ -29,13 +34,13 @@ export const Form = (props: FormProps) => {
                 onCancel();
             }}
         >
-            <Input value={inputValue} onValueChange={(value) => setInputValue(value)} />
-            <button type={"submit"}>
+            <Input autoFocus value={inputValue} onValueChange={(value) => setInputValue(value)} />
+            <ButtonIcon type={"submit"}>
                 <CheckIcon />
-            </button>
-            <button type={"reset"}>
+            </ButtonIcon>
+            <ButtonIcon type={"reset"}>
                 <Cross1Icon />
-            </button>    
+            </ButtonIcon>    
         </FormStyled>
     );
 };
