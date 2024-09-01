@@ -37,7 +37,7 @@ Using the provided UI components, implement the following modifications, bugfixe
 
 #### Bugs
 
--   [x] **B1**: `List` content
+-   [-] **B1**: `List` content
     -   Fix the content alignment of the non-empty `List` component.
 -   [x] **B2**: `Footer` alignment
     -   Fix the `Layout` component so the `Footer` is always attached to the bottom of the `Layout`.
@@ -86,12 +86,12 @@ _Fix all other bugs and visual imperfections you find._
 #### Stories (optional tasks)
 
 -   [ ] **SB1**: Add a story/stories for the `Layout` component.
--   [ ] **SB2**: Add stories showing available `Button` variants.
+-   [x] **SB2**: Add stories showing available `Button` variants.
 -   [ ] **SB3**: Add a story showcasing the `ListItem` actions visibility change on hover (implemented in _"UI3"_).
 
 ### Server
 
--   [x] **S1**: Implement a custom endpoint for marking single todo item as "done". Calling this endpoint sets the `done` field to `true` and the `finishedAt` field to current time. Use this new endpoint in the client.
+-   [-] **S1**: Implement a custom endpoint for marking single todo item as "done". Calling this endpoint sets the `done` field to `true` and the `finishedAt` field to current time. Use this new endpoint in the client.
 
 ## Additional Comments
 
