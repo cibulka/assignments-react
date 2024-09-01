@@ -37,7 +37,7 @@ Using the provided UI components, implement the following modifications, bugfixe
 
 #### Bugs
 
--   [-] **B1**: `List` content
+-   [x] **B1**: `List` content
     -   Fix the content alignment of the non-empty `List` component.
 -   [x] **B2**: `Footer` alignment
     -   Fix the `Layout` component so the `Footer` is always attached to the bottom of the `Layout`.
@@ -91,7 +91,7 @@ _Fix all other bugs and visual imperfections you find._
 
 ### Server
 
--   [-] **S1**: Implement a custom endpoint for marking single todo item as "done". Calling this endpoint sets the `done` field to `true` and the `finishedAt` field to current time. Use this new endpoint in the client.
+-   [x] **S1**: Implement a custom endpoint for marking single todo item as "done". Calling this endpoint sets the `done` field to `true` and the `finishedAt` field to current time. Use this new endpoint in the client.
 
 ## Additional Comments
 

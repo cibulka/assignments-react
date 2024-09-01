@@ -1,20 +1,18 @@
 import { Pencil1Icon, TrashIcon } from "@radix-ui/react-icons";
-import React from "react";
 import styled from "styled-components";
 
 import { Checkbox } from "./Checkbox";
-import { ButtonAction } from "./button/styles";
 import { ButtonVariant } from "./button/types";
 import { Button } from "./button";
 
 const StyledDiv = styled.div`
     display: flex;
     align-items: center;
-    button:not(:first-of-type) {
+    button:not(.checkbox) {
         opacity: 0;
         transition: opacity 0.4s ease;
     }
-    &:hover button:not(:first-of-type) {
+    &:hover button:not(.checkbox) {
         opacity: 1;
     }
 `;
@@ -22,6 +20,12 @@ const StyledDiv = styled.div`
 const Label = styled.label`
     margin-left: 15px;
     flex: 1;
+`;
+
+const Actions = styled.div`
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
 `;
 
 export type LiteeItemProp = {
@@ -37,14 +41,17 @@ export const ListItem = (props: LiteeItemProp) => {
 
     return (
         <StyledDiv>
-            <Checkbox checked={isDone} onCheckedChange={onItemDoneToggle} />
+            <Checkbox className="checkbox" checked={isDone} onCheckedChange={onItemDoneToggle} />
             <Label>{label}</Label>
-            <Button onClick={() => onItemDelete()} variant={ButtonVariant.ACTION}>
-                <TrashIcon />
-            </Button>
-            <Button onClick={() => onItemLabelEdit(label)} variant={ButtonVariant.ACTION}>
-                <Pencil1Icon />
-            </Button>
+            <Actions>
+                <Button className="delete" onClick={() => onItemDelete()} variant={ButtonVariant.ACTION}>
+                    {/* TODO: This should not be hardcoded */}
+                    <TrashIcon color="#E5484D" />
+                </Button>
+                <Button onClick={() => onItemLabelEdit(label)} variant={ButtonVariant.ACTION}>
+                    <Pencil1Icon />
+                </Button>
+            </Actions>
         </StyledDiv>
     );
 };

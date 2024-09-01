@@ -9,7 +9,13 @@ import { ButtonVariant } from "./button/types";
 
 const StyledDiv = styled.header`
     display: flex;
+    align-items: center;
     justify-content: space-between;
+    margin-bottom: 1em;
+    h1 {
+        font-size: 1.4em;
+        font-weight: bold;
+    }
 `;
 
 type HeaderProps = {
