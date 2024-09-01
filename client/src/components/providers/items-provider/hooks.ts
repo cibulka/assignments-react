@@ -50,3 +50,23 @@ export function useOnItemAddOrEdit(editedId: number | null) {
             })
     }, []);
 };
+
+export function useGetOnItemDelete() {
+    const { dispatch } = useItemsContext();
+
+    return useCallback((deletedId: number) => () => {
+        return fetch(API.item(deletedId), {
+            method: 'DELETE'
+        })
+            .then(() => {
+                dispatch?.({ type: ItemsActionType.DELETE_TODO, payload: deletedId });
+            })
+    }, []);
+}
+
+export function useGetOnItemLabelEdit() {
+    const { dispatch } = useItemsContext();
+    return useCallback((id: number) => (label: string) => {
+        dispatch?.({ type: ItemsActionType.PATCH_TODO_FORM, payload: { id, label } });
+    }, [dispatch])
+}
