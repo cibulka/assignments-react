@@ -7,6 +7,13 @@ import { Checkbox } from "./Checkbox";
 const StyledDiv = styled.div`
     display: flex;
     align-items: center;
+    button:not(:first-of-type) {
+        opacity: 0;
+        transition: opacity 0.4s ease;
+    }
+    &:hover button:not(:first-of-type) {
+        opacity: 1;
+    }
 `;
 
 const Label = styled.label`
