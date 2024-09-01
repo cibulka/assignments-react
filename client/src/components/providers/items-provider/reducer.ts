@@ -34,5 +34,14 @@ export function itemsReducer(state: ItemsContextValue, action: ItemsAction): Ite
           items: [...state.items, action.payload],
         }
     }
+    case ItemsActionType.TOGGLE_STATE: {
+      return {
+        ...state,
+        items: state.items.map(item => {
+          if (item.id !== action.payload.id) return item;
+          return { ...item, isDone: action.payload.isDone };
+        }),
+      }
+  }
   }
 }

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { useGetOnItemDelete, useGetOnItemLabelEdit, useItemsContext } from "./providers/items-provider/hooks";
+import { useGetOnItemDelete, useGetOnItemDoneToggle, useGetOnItemLabelEdit, useItemsContext } from "./providers/items-provider/hooks";
 import { ListItem } from "./ListItem";
 
 export const ListStyled = styled.div`
@@ -12,9 +12,7 @@ export const ListStyled = styled.div`
 export const List = () => {
     const { state } = useItemsContext();
 
-    // TODO: Implement items methods
-    const onItemDoneToggle = console.log;
-    
+    const getOnItemDoneToggle = useGetOnItemDoneToggle();
     const getOnItemDelete = useGetOnItemDelete();
     const getOnItemLabelEdit = useGetOnItemLabelEdit();
 
@@ -26,6 +24,7 @@ export const List = () => {
             {state.items.map(item => {
                 const onItemDelete = getOnItemDelete(item.id);
                 const onItemLabelEdit = getOnItemLabelEdit(item.id);
+                const onItemDoneToggle = getOnItemDoneToggle(item.id);
                 return (
                     <ListItem 
                         key={item.id} 

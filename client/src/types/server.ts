@@ -1,13 +1,8 @@
+// This could probably be infered from /server somehow
 export type Item = {
     label: string;
     isDone: boolean;
     createdAt: number;
+    finishedAt?: number;
     id: number;
-}
-
-export enum FetchState {
-    IDLE = 'IDLE',
-    LOADING = 'LOADING',
-    FAILURE = 'FAILURE',
-    SUCCESS = 'SUCCESS',
 }

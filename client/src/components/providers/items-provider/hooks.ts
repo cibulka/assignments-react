@@ -70,3 +70,19 @@ export function useGetOnItemLabelEdit() {
         dispatch?.({ type: ItemsActionType.PATCH_TODO_FORM, payload: { id, label } });
     }, [dispatch])
 }
+
+export function useGetOnItemDoneToggle() {
+    const { dispatch } = useItemsContext();
+    return useCallback((id: number) => (isDone: boolean) => {
+        const url = isDone ? API.complete(id) : API.incomplete(id);
+        return fetch(url, {
+            method: 'PUT',
+            headers: {
+                "Content-Type": 'application/json',
+            },
+        })
+            .then(() => {
+                dispatch?.({ type: ItemsActionType.TOGGLE_STATE, payload: { id, isDone } });
+            })
+    }, []);
+}

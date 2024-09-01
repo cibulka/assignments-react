@@ -6,6 +6,7 @@ export enum ItemsActionType {
   PATCH_TODO = "PATCH_TODO",
   PATCH_TODO_FORM = "PATCH_TODO_FORM",
   POST_TODO = "POST_TODO",
+  TOGGLE_STATE = "TOGGLE_STATE"
 }
 
 export type ItemsAction =
@@ -14,4 +15,5 @@ export type ItemsAction =
   | { type: ItemsActionType.PATCH_TODO; payload: Item }
   | { type: ItemsActionType.PATCH_TODO_FORM; payload: { id: number; label: string } }
   | { type: ItemsActionType.POST_TODO; payload: Item }
+  | { type: ItemsActionType.TOGGLE_STATE; payload: { id: number; isDone: boolean } }
   
