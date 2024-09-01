@@ -7,10 +7,6 @@ import { ButtonVariant } from "./types";
 const meta = {
     title: "Button/Button",
     component: Button,
-    argTypes: {
-        onCancel: { action: "cancelled" },
-        onSubmit: { action: "submitted" },
-    },
 } as Meta<typeof Button>;
 
 export default meta;
