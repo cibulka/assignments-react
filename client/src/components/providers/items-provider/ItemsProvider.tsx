@@ -1,6 +1,6 @@
 import { createContext, useReducer, PropsWithChildren, useEffect } from "react";
 
-import { API, BE_URL } from "../../../constants/server";
+import { API } from "../../../constants/server";
 
 import { itemsReducer } from "./reducer";
 import type { ItemsContextValue, ItemsDispatch } from './types';
@@ -20,7 +20,7 @@ export const ItemsProvider = ({ children }: PropsWithChildren) => {
     const [state, dispatch] = useReducer(itemsReducer, initialState);
 
     useEffect(() => {
-      fetch(`${BE_URL}${API.items}`).then(res => res.json()).then(todos => {
+      fetch(API.items).then(res => res.json()).then(todos => {
         dispatch({ type: ItemsActionType.LOAD_TODOS, payload: todos });
       });
     }, [dispatch]);
