@@ -6,6 +6,7 @@ import { ListItem } from "./ListItem";
 export const ListStyled = styled.div`
     display: flex;
     flex-direction: column;
+    flex: 1;
 `;
 
 export const List = () => {
